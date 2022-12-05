@@ -28,7 +28,7 @@ def pregunta_01():
     X.drop(['strength'], axis = 1, inplace = True) 
 
     # Retorne `X` y `y`
-    return x, y
+    return X, y
 
 
 def pregunta_02():
@@ -40,7 +40,7 @@ def pregunta_02():
     from sklearn.model_selection import train_test_split
 
     # Cargue los datos de ejemplo y asigne los resultados a `X` y `y`.
-    x, y = pregunta_01()
+    X, y = pregunta_01()
 
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 12453. Use el 75% de los patrones para entrenamiento.
@@ -150,7 +150,7 @@ def pregunta_05():
     estimator = pregunta_04()
 
     # Entrene el estimador
-    estimator.fit(x_train, y_train)  #
+    estimator.fit(x_train, y_train)
 
     # Pronostique para las muestras de entrenamiento y validacion
     y_trian_pred = estimator.predict(x_train)  
@@ -159,11 +159,11 @@ def pregunta_05():
     # Calcule el error cuadrático medio de las muestras
     mse_train = mean_squared_error(  
         y_train,  
-        y_trian_pred,  
+        y_trian_pred
     )
     mse_test = mean_squared_error(  
         y_test,  
-        y_test_pred,  
+        y_test_pred  
     )
 
     # Retorne el mse de entrenamiento y prueba
